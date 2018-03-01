@@ -1,0 +1,203 @@
+\documentclass[a4paper]{article}
+
+\pdfpagewidth 8.5in
+\pdfpageheight 11.6in
+
+%\setlength{\textwidth}{18.2cm}
+%\setlength{\textheight}{26cm}
+%\setlength{\topmargin}{2.5cm}
+%\setlength{\evensidemargin}{1.cm}
+%\setlength{\oddsidemargin}{1.cm}
+\usepackage{anysize}
+\marginsize{2.0cm}{2.0cm}{2.0cm}{2.0cm}
+
+\usepackage{amsmath}
+\usepackage[magyar]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{hhline}
+\usepackage{multicol}
+\usepackage{multirow}
+
+\begin{document}
+
+\begin{titlepage}
+	\begin{center}
+		\vspace{1 cm}
+		\Huge{\textbf{Elemi töltés meghatározása\\}}
+		\vspace{2 cm}
+		\Large{Körtefái Dóra\\Kovács Kristóf Péter\\Boldizsár Bálint\\}
+		\vspace{1 cm}
+		\Large{
+			\textit{Mérés időpontja:} 2018.02.26.\\ 
+			\textit{Mérés száma:} 2.\\}
+	\end{center}
+	
+\end{titlepage}
+
+\pagebreak
+
+\section{A mérés célja:}
+Mérésünk során igazolni szeretnénk, hogy a töltések csak diszkrét értékeket vehetnek fel. Továbbá meghatározzuk az elemi töltést, egy elektron töltését. \\
+A mérést a Millikan-kísérletet követve végezzük el, kis mértékben módosítva az eljárást.
+
+\section{A mérőeszközök:}
+\begin{itemize}
+        \item Olajpumpa
+        \item Kondenzátor
+        \item Mikroszkóp mérőskálával
+        \item Kamera
+		\item Változtatható feszültségű tápegység
+        \item Stopper
+        \item Számítógép a mérés követéséhez
+\end{itemize}
+
+\section{A mérés rövid leírása:}
+Az olajpumpa segítségével töltéssel rendelkező cseppeket juttatunk a kondenzátor lemezei közé. A mikroszkóppal egy cseppre fókuszálva meghatározzuk annak sebességét a közegben, először elektromos tér nélkül, majd a kondenzátor fegyverzeteire feszültséget kapcsolva is. A sebességét adott út megtételéhez szükséges időt mérve állapítjuk meg. \\
+Első esetben a gravitációs erőn kívül a közeg felhajtóereje, és a Stokes-féle súrlódási erő hat a cseppre. Ekkor a mozgásegyenlete:
+\begin{equation}
+6\pi \eta r v_0 = \frac{4}{3} r^3 \pi (\rho_o-\rho_l)g,
+\end{equation}
+ahol $\eta$ a viszkozitási együttható, $r$ a csepp sugara, $\rho_o=875\ \frac{kg}{m^3}$ az olaj, $\rho_l=1.29\ \frac{kg}{m^3}$ pedig a levegő sűrűsége, $g$ a nehézségi gyorsulás értéke. \\
+Fontos, hogy mivel a viszkozitási együttható hőmérsékletfüggő, ezért korrekciót kell elvégezni a számolásokhoz:
+\begin{equation}
+\eta=\eta_0\sqrt{\frac{T}{T_0}}\cdot\frac{1+\frac{C}{T_0}}{1+\frac{C}{T}},
+\end{equation}
+ahol $\eta_0=1.708\cdot10^{-5}\ Pa\cdot s$, $C=113\ K$, $T_0=273\ K$ és $T=296\ K$ a mérés alatt mért hőmérséklet.
+\\
+(1)-ből meghatározható a sugár:
+\begin{equation}
+r=\sqrt{\frac{9 \eta v_0}{2 (\rho_o-\rho_l)g}}.
+\end{equation} 
+A fent leírt dinamikus mérési módszert használva - azaz elektromos térben is mérve az olajcsepp sebességét - a csepp töltése a következő egyenletek alapján számítható ki:
+\begin{equation}
+q\frac{U}{d}-\frac{4}{3} r^3 \pi (\rho _o - \rho _l) g=6 \pi \eta r v_{fel},
+\end{equation}
+illetve
+\begin{equation}
+q\frac{U}{d}+\frac{4}{3} r^3 \pi (\rho _o - \rho _l) g=6 \pi \eta r v_{le},
+\end{equation}
+ahol $q$ a töltés, $U$ a feszültség, $d=6\text{ mm}$ a fegyverzetek távolsága.\\
+(4) a felfelé-, (5) pedig a lefelé haladó test mozgását írja le. 
+\\
+Mi többnyire felfelé mozgó cseppek sebességét határoztuk meg.
+
+\section{Mérési adatok}
+A megtett út leolvasásához egy skála volt segítségünkre, melynek egy beosztása $5.33\cdot10^{-5}\ \text{m}$.
+Az alábbi táblázatban láthatóak a mért és számolt adataink.
+\begin{table}[h!]\centering
+	\caption{Olajcsepp esése}
+	%	\label{tab: 1. táblázat}
+	\vspace{0.3cm}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+		
+		\hline
+		$n$ & egység & $s_0\ [mm]$ & $t_0\ [s]$ & $v_0\ \left[\frac{\mu m}{s}\right]$ & egység & $s_E\ [mm]$ & $t_E\ [s]$ & $v_E\ \left[\frac{\mu m}{s}\right]$ & $U\ [V]$ & $r\ [\mu m]$ \\ \hline
+		1 & 40 & 2.13 & 37.06 & 57.56 & -40 & -2.13 & 16.73 & -127.51 & 505 & 0.742 \\ \hline
+		2 & 20 & 1.07 & 95.47 & 11.17 & 50 & 2.67 & 12.75 & 209.14 & 505 & 0.327 \\ \hline
+		3 & 30 & 1.60 & 128.90 & 12.41 & 40 & 2.13 & 9.68 & 220.37 & 502 & 0.344 \\ \hline
+		4 & 30 & 1.60 & 65.10 & 24.58 & 40 & 2.13 & 22.31 & 95.62 & 502 & 0.485 \\ \hline
+		5 & 30 & 1.60 & 59.19 & 27.03 & 40 & 2.13 & 25.94 & 82.24 & 502 & 0.508 \\ \hline
+		6 & 30 & 1.60 & 61.62 & 25.96 & 40 & 2.13 & 26.22 & 81.36 & 502 & 0.498 \\ \hline
+		7 & 25 & 1.33 & 47.72 & 27.94 & 40 & 2.13 & 25.43 & 83.89 & 502 & 0.517 \\ \hline
+		8 & 30 & 1.60 & 20.50 & 78.04 & 30 & 1.60 & 7.68 & 208.32 & 502 & 0.864 \\ \hline
+		9 & 30 & 1.60 & 62.75 & 25.50 & 30 & 1.60 & 19.25 & 83.11 & 502 & 0.494 \\ \hline
+		10 & 30 & 1.60 & 42.00 & 38.09 & 40 & 2.13 & 14.82 & 143.94 & 502 & 0.603 \\ \hline
+		11 & 20 & 1.07 & 39.48 & 27.02 & 30 & 1.60 & 18.63 & 85.88 & 502 & 0.508 \\ \hline
+		12 & 30 & 1.60 & 60.08 & 26.63 & 40 & 2.13 & 25.91 & 82.33 & 501 & 0.505 \\ \hline
+		13 & 30 & 1.60 & 24.20 & 66.11 & 30 & 1.60 & 27.40 & 58.39 & 501 & 0.795 \\ \hline
+		14 & 30 & 1.60 & 33.25 & 48.12 & 30 & 1.60 & 56.90 & 28.12 & 501 & 0.678 \\ \hline
+		15 & 40 & 2.13 & 34.35 & 62.10 & 40 & 2.13 & 10.81 & 197.34 & 499 & 0.770 \\ \hline
+		16 & 30 & 1.60 & 31.10 & 51.44 & 30 & 1.60 & 15.32 & 104.43 & 501 & 0.701 \\ \hline
+		17 & 30 & 1.60 & 31.62 & 50.60 & 40 & 2.13 & 21.17 & 100.77 & 500 & 0.695 \\ \hline
+		18 & 30 & 1.60 & 52.13 & 30.69 & 30 & 1.60 & 23.96 & 66.77 & 500 & 0.542 \\ \hline
+		19 & 30 & 1.60 & 52.03 & 30.75 & 30 & 1.60 & 22.53 & 71.01 & 502 & 0.542 \\ \hline
+		20 & 30 & 1.60 & 52.06 & 30.73 & 30 & 1.60 & 23.52 & 68.02 & 502 & 0.542 \\ \hline
+		21 & 40 & 2.13 & 35.54 & 60.02 & 40 & 2.13 & 9.28 & 229.87 & 502 & 0.757 \\ \hline
+		22 & 30 & 1.60 & 31.06 & 51.51 & 30 & 1.60 & 15.86 & 100.88 & 501 & 0.702 \\ \hline
+		23 & 30 & 1.60 & 60.94 & 26.25 & 30 & 1.60 & 15.34 & 104.30 & 500 & 0.501 \\ \hline
+		24 & 30 & 1.60 & 59.97 & 26.68 & 40 & 2.13 & 26.32 & 81.05 & 500 & 0.505 \\ \hline
+		25 & 30 & 1.60 & 44.22 & 36.18 & 40 & 2.13 & 8.82 & 241.86 & 498 & 0.588 \\ \hline
+		26 & 30 & 1.60 & 78.68 & 20.33 & 30 & 1.60 & 14.59 & 109.66 & 499 & 0.441 \\ \hline
+	\end{tabular}
+		
+\end{table}
+
+Itt a $0$-val indexelt mennyiségek a nulla térerősségnél, az $E$-vel indexeltek pedig a térerősség melletti mérési eredményeket jelölik. $s$ jelöli a megtett utat, $t$ a mért idő, $v$ az ezekből számolt sebesség, $U$ a feszültség és $r$ a (2)-ből meghatározott sugár.
+
+A Stokes-féle súrlódás (1)-ben használt alakja csak akkor használható, ha a csepp mérete sokkal nagyobb a levegőrészecskék szabad úthosszánál. Egyéb esetben korrekciót kell elvégezni az alábbi összefüggés szerint:
+\begin{equation}
+F_{s,korr}=6\pi\eta r v_0\frac{1}{1+\frac{K}{pr}},
+\end{equation} 
+ahol $K=8.26\ Pa\cdot m$ konstans, $p=1016\ hPa$ a mérés alatti légnyomásérték.\\
+Ekkor (1) módosított alakja:
+\begin{equation}
+\frac{4}{3}\pi r^3(\rho_o-\rho_l)g=6\pi\eta r v_0\frac{1}{1+\frac{K}{pr}},
+\end{equation}
+amit rendezve, $r$-re nézve egy másodfokú egyenletet kapunk.\\
+A korrigált sugárral számolt súrlódási- illetve felhajtóerők segítségével már meghatározható az olajcseppek töltése (4) alapján:
+\begin{equation}
+q=\frac{d}{U}\cdot(F_{surl}+F_{grav,felh}).
+\end{equation}
+Itt $F_{grav,felh}=\frac{4}{3}r^3\pi(\rho_o-\rho_l)g$-t jelöli.\\
+Ezeket az értékeket tartalmazza az alábbi táblázat.\newpage
+\begin{table}[h!]\centering
+	\caption{Töltések meghatározása}
+	%	\label{tab: 1. táblázat}
+	\vspace{0.3cm}
+	\begin{tabular}{|c|c|c|c|c|}
+		
+		\hline
+		$n$ & $r_{korr}\ [\mu m]$ & $F_{surl}\ [pN] $& $F_{grav,felh}\ [pN]$ & $q\ [10^{-19}\ C]$ \\ \hline
+		1 & 0.702 & -0.029 & 0.012 & -1.794 \\ \hline
+		2 & 0.289 & 0.019 & 0.001 & 2.022 \\ \hline
+		3 & 0.306 & 0.021 & 0.001 & 2.309 \\ \hline
+		4 & 0.446 & 0.014 & 0.003 & 1.858 \\ \hline
+		5 & 0.469 & 0.012 & 0.004 & 1.792 \\ \hline
+		6 & 0.459 & 0.012 & 0.003 & 1.717 \\ \hline
+		7 & 0.478 & 0.013 & 0.004 & 1.872 \\ \hline
+		8 & 0.824 & 0.056 & 0.020 & 8.806 \\ \hline
+		9 & 0.455 & 0.012 & 0.003 & 1.718 \\ \hline
+		10 & 0.564 & 0.026 & 0.006 & 3.680 \\ \hline
+		11 & 0.469 & 0.013 & 0.004 & 1.851 \\ \hline
+		12 & 0.465 & 0.012 & 0.004 & 1.774 \\ \hline
+		13 & 0.755 & 0.014 & 0.015 & 3.488 \\ \hline
+		14 & 0.639 & 0.006 & 0.009 & 1.775 \\ \hline
+		15 & 0.731 & 0.047 & 0.014 & 7.038 \\ \hline
+		16 & 0.662 & 0.023 & 0.010 & 3.774 \\ \hline
+		17 & 0.656 & 0.022 & 0.010 & 3.637 \\ \hline
+		18 & 0.502 & 0.011 & 0.005 & 1.735 \\ \hline
+		19 & 0.503 & 0.011 & 0.005 & 1.807 \\ \hline
+		20 & 0.503 & 0.011 & 0.005 & 1.753 \\ \hline
+		21 & 0.718 & 0.054 & 0.013 & 7.665 \\ \hline
+		22 & 0.662 & 0.022 & 0.010 & 3.692 \\ \hline
+		23 & 0.462 & 0.015 & 0.004 & 2.111 \\ \hline
+		24 & 0.466 & 0.012 & 0.004 & 1.759 \\ \hline
+		25 & 0.549 & 0.043 & 0.006 & 5.493 \\ \hline
+		26 & 0.402 & 0.014 & 0.002 & 1.793 \\ \hline
+	\end{tabular}
+	
+\end{table}
+
+Ha az adataink nem lennének mérési hibával terhelve, akkor a feladatunk a kapott töltések nagyobb közös osztójának megkeresése lenne. A mi esetünkben azonban a mérési hibák miatt a következő módszert alkalmazzuk:\\
+Képezzük a következő függvényt:
+\begin{equation}
+f(x)=\sum_{i=1}^N \sin^2\left(\pi\cdot\frac{q_i}{x}\right).
+\end{equation}
+Ha $e$-vel jelöljük a keresett elemi töltést, akkor ha az előbbi kifejezésbe $x$ helyére $e$-t, $e/2$-t, stb. helyettesítünk, akkor a függvény lokális minimumokkal rendelkezik. A minimumhelyek közül a legnagyobb lesz az elemi töltés.\\
+Az alábbi ábrán látszódik $f$ értéke $x$ függvényében:
+\begin{figure}[h!]\centering
+	\caption{$f(x)$ grafikon}
+	\includegraphics[width=18cm]{mill_scaled.png}
+\end{figure}\\
+A legnagyobb maximumhely pontos értéke $e=1.793\cdot 10^{-19}\ C$.\\
+Ha ezt összevetjük az irodalmi értékkel ($e_{irod}=1.602\cdot 10^{-19}\ C$), és ezt, illetve ennek egész számú hányadosait ábrázoljuk az $x$ tengelyen (hiszen így a legnagyobb minimumhely lesz pont $e$), akkor ebből is jól látszik az eltérés mértéke.
+\begin{figure}[h!]\centering
+	\caption{$f(x)$ grafikon}
+	\includegraphics[width=18cm]{mill_charge.png}
+\end{figure}
+
+
+\end{document}
+
