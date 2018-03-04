@@ -132,51 +132,47 @@ A Stokes-féle súrlódás (1)-ben használt alakja csak akkor használható, ha
 F_{s,korr}=6\pi\eta r v_0\frac{1}{1+\frac{K}{pr}},
 \end{equation} 
 ahol $K=8.26\ Pa\cdot m$ konstans, $p=1016\ hPa$ a mérés alatti légnyomásérték.\\
-Ekkor (1) módosított alakja:
-\begin{equation}
-\frac{4}{3}\pi r^3(\rho_o-\rho_l)g=6\pi\eta r v_0\frac{1}{1+\frac{K}{pr}},
-\end{equation}
-amit rendezve, $r$-re nézve egy másodfokú egyenletet kapunk.\\
+Ekkor (1) bal oldalára $F_{s,korr}$ kerül, amiből meghatározható $r_{korr}$ korrigált sugár. Ezt iteratívan elvégezve megkaphatjuk a magasabb rendű korrekciókat is.\\
 A korrigált sugárral számolt súrlódási- illetve felhajtóerők segítségével már meghatározható az olajcseppek töltése (4) alapján:
 \begin{equation}
 q=\frac{d}{U}\cdot(F_{surl}+F_{grav,felh}).
 \end{equation}
 Itt $F_{grav,felh}=\frac{4}{3}r^3\pi(\rho_o-\rho_l)g$-t jelöli.\\
-Ezeket az értékeket tartalmazza az alábbi táblázat.\newpage
+Ezeket az értékeket tartalmazza az alábbi táblázat, a számításaink során a másodrendű korrekciót alkalmaztuk.\newpage
 \begin{table}[h!]\centering
 	\caption{Töltések meghatározása}
 	%	\label{tab: 1. táblázat}
 	\vspace{0.3cm}
-	\begin{tabular}{|c|c|c|c|c|}
+	\begin{tabular}{|c|c|c|c|c|c|c|}
 		
 		\hline
-		$n$ & $r_{korr}\ [\mu m]$ & $F_{surl}\ [pN] $& $F_{grav,felh}\ [pN]$ & $q\ [10^{-19}\ C]$ \\ \hline
-		1 & 0.702 & -0.029 & 0.012 & -1.794 \\ \hline
-		2 & 0.289 & 0.019 & 0.001 & 2.022 \\ \hline
-		3 & 0.306 & 0.021 & 0.001 & 2.309 \\ \hline
-		4 & 0.446 & 0.014 & 0.003 & 1.858 \\ \hline
-		5 & 0.469 & 0.012 & 0.004 & 1.792 \\ \hline
-		6 & 0.459 & 0.012 & 0.003 & 1.717 \\ \hline
-		7 & 0.478 & 0.013 & 0.004 & 1.872 \\ \hline
-		8 & 0.824 & 0.056 & 0.020 & 8.806 \\ \hline
-		9 & 0.455 & 0.012 & 0.003 & 1.718 \\ \hline
-		10 & 0.564 & 0.026 & 0.006 & 3.680 \\ \hline
-		11 & 0.469 & 0.013 & 0.004 & 1.851 \\ \hline
-		12 & 0.465 & 0.012 & 0.004 & 1.774 \\ \hline
-		13 & 0.755 & 0.014 & 0.015 & 3.488 \\ \hline
-		14 & 0.639 & 0.006 & 0.009 & 1.775 \\ \hline
-		15 & 0.731 & 0.047 & 0.014 & 7.038 \\ \hline
-		16 & 0.662 & 0.023 & 0.010 & 3.774 \\ \hline
-		17 & 0.656 & 0.022 & 0.010 & 3.637 \\ \hline
-		18 & 0.502 & 0.011 & 0.005 & 1.735 \\ \hline
-		19 & 0.503 & 0.011 & 0.005 & 1.807 \\ \hline
-		20 & 0.503 & 0.011 & 0.005 & 1.753 \\ \hline
-		21 & 0.718 & 0.054 & 0.013 & 7.665 \\ \hline
-		22 & 0.662 & 0.022 & 0.010 & 3.692 \\ \hline
-		23 & 0.462 & 0.015 & 0.004 & 2.111 \\ \hline
-		24 & 0.466 & 0.012 & 0.004 & 1.759 \\ \hline
-		25 & 0.549 & 0.043 & 0.006 & 5.493 \\ \hline
-		26 & 0.402 & 0.014 & 0.002 & 1.793 \\ \hline
+		n & $r_{korr}\ [\mu m]$ & $F_{s,korr}\ [pN]$ & $r_{korr2}\ [\mu m]$ & $F_{s,korr2}\ [pN]$  & $F_{grav,felh}\ [pN]$ & $q\ [10^{-19}\ C]$ \\ \hline
+		1 & 0.668 & -0.029 & 0.596 & -0.026 & 0.008 & -2.195 \\ \hline
+		2 & 0.262 & 0.019 & 0.200 & 0.014 & 0.000 & 1.736 \\ \hline
+		3 & 0.279 & 0.021 & 0.216 & 0.016 & 0.000 & 1.992 \\ \hline
+		4 & 0.415 & 0.014 & 0.347 & 0.011 & 0.002 & 1.540 \\ \hline
+		5 & 0.438 & 0.012 & 0.370 & 0.010 & 0.002 & 1.463 \\ \hline
+		6 & 0.428 & 0.012 & 0.360 & 0.010 & 0.002 & 1.401 \\ \hline
+		7 & 0.447 & 0.013 & 0.378 & 0.011 & 0.002 & 1.530 \\ \hline
+		8 & 0.789 & 0.056 & 0.716 & 0.051 & 0.013 & 7.685 \\ \hline
+		9 & 0.424 & 0.012 & 0.356 & 0.010 & 0.002 & 1.405 \\ \hline
+		10 & 0.532 & 0.026 & 0.461 & 0.023 & 0.004 & 3.143 \\ \hline
+		11 & 0.438 & 0.013 & 0.369 & 0.011 & 0.002 & 1.517 \\ \hline
+		12 & 0.434 & 0.012 & 0.366 & 0.010 & 0.002 & 1.449 \\ \hline
+		13 & 0.721 & 0.014 & 0.648 & 0.013 & 0.010 & 2.725 \\ \hline
+		14 & 0.606 & 0.006 & 0.534 & 0.005 & 0.005 & 1.271 \\ \hline
+		15 & 0.697 & 0.047 & 0.624 & 0.042 & 0.009 & 6.129 \\ \hline
+		16 & 0.628 & 0.023 & 0.556 & 0.020 & 0.006 & 3.127 \\ \hline
+		17 & 0.623 & 0.022 & 0.551 & 0.019 & 0.006 & 3.004 \\ \hline
+		18 & 0.471 & 0.011 & 0.402 & 0.009 & 0.002 & 1.383 \\ \hline
+		19 & 0.471 & 0.011 & 0.402 & 0.010 & 0.002 & 1.450 \\ \hline
+		20 & 0.471 & 0.011 & 0.402 & 0.009 & 0.002 & 1.400 \\ \hline
+		21 & 0.684 & 0.054 & 0.611 & 0.048 & 0.008 & 6.742 \\ \hline
+		22 & 0.629 & 0.022 & 0.557 & 0.019 & 0.006 & 3.050 \\ \hline
+		23 & 0.431 & 0.015 & 0.363 & 0.013 & 0.002 & 1.762 \\ \hline
+		24 & 0.435 & 0.012 & 0.366 & 0.010 & 0.002 & 1.435 \\ \hline
+		25 & 0.517 & 0.043 & 0.446 & 0.037 & 0.003 & 4.847 \\ \hline
+		26 & 0.372 & 0.014 & 0.305 & 0.011 & 0.001 & 1.505 \\ \hline
 	\end{tabular}
 	
 \end{table}
@@ -192,15 +188,15 @@ Az alábbi ábrán látszódik $f$ értéke $x$ függvényében:
 	\caption{$f(x)$ grafikon}
 	\includegraphics[width=18cm]{mill_scaled.png}
 \end{figure}\\
-A legnagyobb maximumhely pontos értéke $e=(1.964\pm0.181)\cdot 10^{-19}\ C$, ahol a hiba az adatok szórása.\\
-Ha ezt összevetjük az irodalmi értékkel ($e_{irod}=1.602\cdot 10^{-19}\ C$), és ezt, illetve ennek egész számú hányadosait ábrázoljuk az $x$ tengelyen (hiszen így a legnagyobb minimumhely lesz pont $e$), akkor ebből is jól látszik az eltérés mértéke.
+A legnagyobb maximumhely pontos értéke $e=(1.505\pm0.193)\cdot 10^{-19}\ C$, ahol a hiba az adatok szórása.\\
+Ha ezt összevetjük az irodalmi értékkel ($e_{irod}=1.602\cdot 10^{-19}\ C$), és ezt, illetve ennek egész számú hányadosait ábrázoljuk az $x$ tengelyen (hiszen így a legnagyobb minimumhely lesz pont $e$), akkor ennek segítségével látszik az eltérés mértéke.
 \begin{figure}[h!]\centering
 	\caption{$f(x)$ grafikon}
 	\includegraphics[width=18cm]{mill_charge.png}
 \end{figure}
 
 \section{Diszkusszió}
-Mérésünk során Millikan mérését követve kiszámoltuk a beporlasztott olajcseppek töltését, amiből meghatároztuk az elemi töltés nagyságát. Sajnos mérési eredményünk és az irodalmi érték hibahatáron kívül esik, melynek okai lehetnek az időmérés hibája ($\Delta T=0.2\ s$), a skálaleolvasás pontatlansága, a túl alacsonyrendű korrekciók vizsgálata a sugár és a súrlódási erő esetén, illetve az, hogy nem teljesen homogén elektromos tér alakult ki a kondenzátor fegyverzetei között, a mérés során néhol észrevehető volt, hogy a cseppek nem csupán egy síkban és nem is feltétlen tökéletesen függőlegesen mozogtak.
+Mérésünk során Millikan mérését követve kiszámoltuk a beporlasztott olajcseppek töltését, amiből meghatároztuk az elemi töltés nagyságát. Mérési eredményünk és az irodalmi érték hibahatáron belül megegyezik. Az eredmény nagy hibájának okai lehetnek az időmérés hibája ($\Delta T=0.2\ s$), a skálaleolvasás pontatlansága, illetve az, hogy nem teljesen homogén elektromos tér alakult ki a kondenzátor fegyverzetei között, a mérés során néhol észrevehető volt, hogy a cseppek nem csupán egy síkban és nem is feltétlen tökéletesen függőlegesen mozogtak.
 
 \section{Források}
 [1] Kovács György: 2. Az elemi töltés meghatározása
